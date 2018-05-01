@@ -57,8 +57,8 @@
                             <input type="text" class="form-control" id="profil-Ville" placeholder="Entrez votre ville de résidence">
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="checkCU">
-                            <label class="form-check-label" for="checkCU">J'accepte les conditions d'utilisation de TinderASI</label>
+                            <input type="checkbox" class="form-check-input" id="profil-checkCU">
+                            <label class="form-check-label" for="profil-checkCU">J'accepte les conditions d'utilisation de TinderASI</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Suivant</button>
                     </form>
