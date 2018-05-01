@@ -11,25 +11,28 @@
 |
 */
 
-use App\Task;
+use App\Profil;
 use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['web']], function () {
     /**
-     * Show Task Dashboard
+     * Show Profil Dashboard
      */
     Route::get('/', function () {
-        return view('tasks', [
-            'tasks' => Task::orderBy('created_at', 'asc')->get()
+        return view('profils', [
+            'profils' => Profil::orderBy('created_at', 'asc')->get()
         ]);
     });
 
     /**
-     * Add New Task
+     * Add New Profil
      */
-    Route::post('/task', function (Request $request) {
+    Route::post('/profil', function (Request $request) {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
+            'Pseudo' => 'required|max:255|min:5',
+			'Password' => 'required|max:255|min:5',
+			'Genre' => 'required',
+			'checkCU' => 'boolean|different:0|different:false',
         ]);
 
         if ($validator->fails()) {
@@ -38,18 +41,16 @@ Route::group(['middleware' => ['web']], function () {
                 ->withErrors($validator);
         }
 
-        $task = new Task;
-        $task->name = $request->name;
-        $task->save();
-
-        return redirect('/');
-    });
-
-    /**
-     * Delete Task
-     */
-    Route::delete('/task/{id}', function ($id) {
-        Task::findOrFail($id)->delete();
+        $profil = new Profil;
+        $profil->Pseudo = $request->Pseudo;
+        $profil->Password = $request->Password;
+        $profil->Email = $request->Email;
+        $profil->Nom = $request->Nom;
+        $profil->Prenom = $request->Prenom;
+        $profil->Genre = $request->Genre;
+        $profil->Ville = $request->Ville;
+        $profil->checkCU = $request->checkCU;
+        $profil->save();
 
         return redirect('/');
     });
