@@ -17,31 +17,31 @@
                         {{ csrf_field() }}
                         
                         <div class="form-group">
-                            <label for="InputPseudo"><pre>  Pseudo</pre></label>
+                            <label for="InputPseudo">Pseudo</label>
                             <input type="text" class="form-control" id="InputPseudo" aria-describedby="PseudoHelp" placeholder="Entrez un pseudonyme valide">
                             <small id="PseudoHelp" class="form-text text-muted">Votre pseudo doit faire au moins 5 caractères</small>
                         </div>
                         <div class="form-group">
-                            <label for="InputPassword"><pre>  Mot de passe</pre></label>
+                            <label for="InputPassword">Mot de passe</label>
                             <input type="password" class="form-control" id="InputPassword" aria-describedby="PasswordHelp" placeholder="Entrez un mot de passe valide">
                             <small id="PasswordHelp" class="form-text text-muted">Votre mot de passse doit faire au moins 5 caractères et contenir une majuscule</small>
                         </div>
                         <div class="form-group">
-                            <label for="InputEmail"><pre>  Adresse Email</pre></label>
+                            <label for="InputEmail">Adresse Email</label>
                             <input type="email" class="form-control" id="InputEmail" placeholder="Entrez votre email">
                         </div>
                         <div class="form-group">
-                            <label for="InputPrénom"><pre>  Prénom</pre></label>
+                            <label for="InputPrénom">Prénom</label>
                             <input type="text" class="form-control" id="InputPrénom" placeholder="Entrez votre prénom">
                         </div>
                         <div class="form-group">
-                            <label for="InputNom"><pre>  Nom</pre></label>
+                            <label for="InputNom">Nom<</label>
                             <input type="text" class="form-control" id="InputNom" placeholder="Entrez votre nom de famille">
                         </div>
                         <div class="form-group">
-                            <label for="menuGenre"><pre>  Sexe</pre></label>
+                            <label for="menuGenre">Sexe</label>
                             <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="menuGenre" data-toggle="dropdown">Tutorials
+                                <button class="btn btn-default dropdown-toggle" type="button" id="menuGenre" data-toggle="dropdown">Sélectionnez un genre
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Homme</a></li>
@@ -51,7 +51,7 @@
                               </div>
                         </div>
                         <div class="form-group">
-                            <label for="InputVille"><pre>  Ville</pre></label>
+                            <label for="InputVille">Ville</label>
                             <input type="text" class="form-control" id="InputVille" placeholder="Entrez votre ville de résidence">
                         </div>
                         <div class="form-check">
