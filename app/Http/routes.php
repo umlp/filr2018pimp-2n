@@ -19,8 +19,8 @@ Route::group(['middleware' => ['web']], function () {
      * Show Profil Dashboard
      */
     Route::get('/', function () {
-        return view('profils', [
-            'profils' => Profil::orderBy('created_at', 'asc')->get()
+        return view('profil', [
+            'profil' => Profil::take(1)->orderBy('created_at','desc')
         ]);
     });
 
