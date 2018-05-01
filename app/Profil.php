@@ -12,6 +12,6 @@ class Profil extends Model
      * @var array
      */
     protected $fillable = [
-        'Pseudo', 'Password', 'Prenom', 'Email', 'Nom', 'Genre', 'Ville', 
+        'Pseudo', 'Password', 'Prenom', 'Email', 'Nom', 'Genre', 'Ville', 'profil-checkCU',
     ];
 }
