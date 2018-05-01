@@ -66,7 +66,7 @@
             </div>
 
             <!-- Current Tasks -->
-            @if (count($profils) > 0)
+            @if (isset($profil))
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Current Tasks
