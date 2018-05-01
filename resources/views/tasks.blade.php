@@ -16,6 +16,8 @@
                     <form action="{{ url('profil')}}" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
                         
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                        
                         <div class="form-group">
                             <label for="profil-Pseudo">Pseudo</label>
                             <input type="text" class="form-control" id="profil-Pseudo" aria-describedby="PseudoHelp" placeholder="Entrez un pseudonyme valide">
