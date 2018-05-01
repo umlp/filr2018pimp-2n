@@ -15,24 +15,50 @@
                     <!-- New Task Form -->
                     <form action="{{ url('task')}}" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
-
-                        <!-- Task Name -->
+                        
                         <div class="form-group">
-                            <label for="task-name" class="col-sm-3 control-label">Task</label>
-
-                            <div class="col-sm-6">
-                                <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
-                            </div>
+                            <label for="InputPseudo">Pseudo</label>
+                            <input type="text" class="form-control" id="InputPseudo" aria-describedby="PseudoHelp" placeholder="Entreé un pseudonyme valide">
+                            <small id="PseudoHelp" class="form-text text-muted">Votre pseudo doit faire au moins 5 caractères</small>
                         </div>
-
-                        <!-- Add Task Button -->
                         <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-6">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-btn fa-plus"></i>Add Task
-                                </button>
-                            </div>
+                            <label for="InputPassword">Mot de passe</label>
+                            <input type="password" class="form-control" id="InputPassword" aria-describedby="PasswordHelp" placeholder="Entreé un mot de passe valide">
+                            <small id="PasswordHelp" class="form-text text-muted">Votre mot de passse doit faire au moins 5 caractères et contenir une majuscule</small>
                         </div>
+                        <div class="form-group">
+                            <label for="InputEmail">Adresse Email</label>
+                            <input type="email" class="form-control" id="InputEmail" placeholder="Entrer votre email">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputPrénom">Prénom</label>
+                            <input type="text" class="form-control" id="InputPrénom" placeholder="Entrez votre prénom">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputNom">Nom</label>
+                            <input type="text" class="form-control" id="InputNom" placeholder="Entrez votre nom de famille">
+                        </div>
+                        <div class="form-group">
+                            <label for="menuGenre">Sexe</label>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="menuGenre" data-toggle="dropdown">Tutorials
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Homme</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Femme</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Un peu des deux</a></li>
+                                </ul>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputVille">Ville</label>
+                            <input type="text" class="form-control" id="InputVille" placeholder="Entrez votre ville de résidence">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkCU">
+                            <label class="form-check-label" for="checkCU">J'accepte les conditions d'utilisation de TinderASI</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Suivant</button>
                     </form>
                 </div>
             </div>
