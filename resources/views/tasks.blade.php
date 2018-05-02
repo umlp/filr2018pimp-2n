@@ -5,7 +5,7 @@
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <img src="../ressources/views/images/LogoTinderASI.png" alt="Logo TinderASI" style="float:left;width:120px;height:120px;">
+                    <img src="{{ url('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="float:left;width:120px;height:120px;">
                     TinderASI
                 </div>
                 <div class="panel-body">
@@ -14,7 +14,7 @@
 
                     @if (!isset($profil_1) && !isset($profil))
                         <!-- New Task Form -->
-                        <form action="{{ url('profil_1')}}" method="POST" class="form-horizontal">
+                        <form action="{{ url('profil_1') }}" method="POST" class="form-horizontal">
                             {{ csrf_field() }}
 
                             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
@@ -62,7 +62,7 @@
                     @endif
                     <!-- Seconde Partie Inscription -->
                     @if (isset($profil_1))
-                        <form action="{{ url('profil_2')}}" method="POST" class="form-horizontal">
+                        <form action="{{ url('profil_2') }}" method="POST" class="form-horizontal">
                             {{ csrf_field() }}
 
                             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
