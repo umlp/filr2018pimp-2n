@@ -21,7 +21,7 @@ Route::group(['middleware' => ['web']], function () {
      */
     Route::get('/', function () {
 	$profil = NULL;
-	if(isset($GLOBALS['PSEUDO_PROFIL_ENREGISTRE']))
+	if(isset($_POST['Pseudo']))
 		$profil = Profil::firstByAttributes(['Pseudo' => $PSEUDO_PROFIL_ENREGISTRE]);
 	return view('tasks', ['profil' => $profil]); 
     });
@@ -53,7 +53,7 @@ Route::group(['middleware' => ['web']], function () {
         $profil->Ville = $request->Ville;
         $profil->checkCU = $request->checkCU;
         $profil->save();
-	
+	echo $_POST['Pseudo'];
 	$GLOBALS['PSEUDO_PROFIL_ENREGISTRE'] = $profil->Pseudo;
 	    
         return redirect('/');
