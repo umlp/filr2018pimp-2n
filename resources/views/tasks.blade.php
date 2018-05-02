@@ -45,7 +45,7 @@
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="profil-Genre" data-toggle="dropdown">Sélectionnez un genre
                                 <span class="caret"></span></button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="profil-Genre">
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Homme</a></li>
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Femme</a></li>
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Un peu des deux</a></li>
