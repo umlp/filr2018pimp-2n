@@ -67,23 +67,27 @@
                     <div class="panel-heading">
                         Finaliser l'inccription
                     </div>
-                        
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label class="custom-file">
-                                <input type="file" id="file" class="custom-file-input" onchange="readURL(this);">
-                                <span class="custom-file-control"></span>
-                                <img id="imgPhoto" src="#" alt="Photo de profil" />
-                            </label>
+                    
+                    <form action="{{ url('profil_2')}}" method="POST" class="form-horizontal">
+                        {{ csrf_field() }}
+
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="custom-file">
+                                    <input type="file" id="file" class="custom-file-input" onchange="readURL(this);">
+                                    <span class="custom-file-control"></span>
+                                    <img id="imgPhoto" src="#" alt="Photo de profil" />
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <input type="hidden" name="Photo" id="Photo" value="">
-                    <div class="form-group">
-                        <label for="profil-Description">Description :</label>
-                        <textarea name ="Description" class="form-control" rows="8" id="profil-Description"></textarea>
-                    </div>
+                        <input type="hidden" name="Photo" id="Photo" value="">
+                        <div class="form-group">
+                            <label for="profil-Description">Description :</label>
+                            <textarea name ="Description" class="form-control" rows="8" id="profil-Description"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Suivant</button>
                 </div>
-                
                 <script>
                     function readURL(input) {
                         if (input.files && input.files[0]) {
