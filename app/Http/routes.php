@@ -16,18 +16,13 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['web']], function () {
 	
-	function debug_to_console( $data ) {
-    $output = $data;
-    if ( is_array( $output ) )
-        $output = implode( ',', $output);
-
-    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
-}
     /**
      * Show Profil Dashboard
      */
     Route::get('/', function () {
-	$profil = Profil::query()->first();
+	$profil = NULL;
+	if(isset($PSEUDO_PROFIL_ENREGISTRE))
+		$profil = Profil::query()->firstByAttributes('Pseudo' = $PSEUDO_PROFIL_ENREGISTRE);
 	return view('tasks', ['profil' => $profil]); 
     });
 
@@ -35,7 +30,6 @@ Route::group(['middleware' => ['web']], function () {
      * Add New Profil
      */
     Route::post('/profil', function (Request $request) {
-	debug_to_console("Dans le post");
         /*$validator = Validator::make($request->all(), [
         	'Pseudo' => 'required|max:255|min:5',
 		'Password' => 'required|max:255|min:5',
@@ -59,7 +53,9 @@ Route::group(['middleware' => ['web']], function () {
         $profil->Ville = $request->Ville;
         $profil->checkCU = $request->checkCU;
         $profil->save();
-
+	
+	global $PSEUDO_PROFIL_ENREGISTRE = $profil->Pseudo;
+	    
         return redirect('/');
     });
 });
