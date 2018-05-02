@@ -28,11 +28,11 @@ Route::group(['middleware' => ['web']], function () {
      */
     Route::get('/', function () {
 	debug_to_console("Dans le get");
-        $view = view('profil', [
-            'profil' => Profil::take(1)->orderBy('created_at','desc')
-        ]);
+	$profil = 'profil' => Profil::first();
+	if(!profil->exists) 
+		$profil = NULL
 	debug_to_console("A la fin du get");
-	return $view; 
+	return view('profil', $profil); 
     });
 
     /**
