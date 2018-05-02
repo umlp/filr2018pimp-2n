@@ -15,10 +15,19 @@ use App\Profil;
 use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['web']], function () {
+	
+	function debug_to_console( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
+
+    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+}
     /**
      * Show Profil Dashboard
      */
     Route::get('/', function () {
+	debug_to_console("Dans le get");
         return view('profil', [
             'profil' => Profil::take(1)->orderBy('created_at','desc')
         ]);
@@ -28,6 +37,7 @@ Route::group(['middleware' => ['web']], function () {
      * Add New Profil
      */
     Route::post('/profil', function (Request $request) {
+	debug_to_console("Dans le post");
         $validator = Validator::make($request->all(), [
             'Pseudo' => 'required|max:255|min:5',
 			'Password' => 'required|max:255|min:5',
