@@ -20,9 +20,9 @@ Route::group(['middleware' => ['web']], function () {
      * Show Profil Dashboard
      */
     Route::get('/', function () {
-	$profil = NULL;
-	if(isset($_POST['Pseudo'])) 
-		$profil = Profil::firstByAttributes(['Pseudo' => $_POST['Pseudo']]);
+	$profil = session('pseudo');
+	if(isset($profil)) 
+		$profil = Profil::firstByAttributes(['Pseudo' => session('pseudo')]);
 	return view('tasks', ['profil' => $profil]); 
     });
 
@@ -53,7 +53,7 @@ Route::group(['middleware' => ['web']], function () {
         $profil->Ville = $request->Ville;
         $profil->checkCU = $request->checkCU;
         $profil->save();
-	$_POST['Pseudo'] = $profil->Pseudo;
+	session(['pseudo' => $profil->Pseudo]);
 	    
         return redirect('/');
     });
