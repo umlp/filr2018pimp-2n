@@ -20,16 +20,20 @@ Route::group(['middleware' => ['web']], function () {
      * Show Profil Dashboard
      */
     Route::get('/', function () {
-	$profil = session('pseudo');
-	if(isset($profil)) 
-		$profil = DB::table('profils')->where('Pseudo', session('pseudo'))->first();
-	return view('tasks', ['profil' => $profil]); 
+	$pseudo = session('pseudo');
+	if(isset($pseudo)) {
+		$profil = DB::table('profils')->where('Pseudo', $pseudo)->first();
+		return view('tasks', ['profil' => $profil]); 
+	} else {
+		$profil = session('profil_1');
+		return view('tasks', ['profil_1' => $profil]); 
+	}
     });
 
     /**
      * Add New Profil
      */
-    Route::post('/profil', function (Request $request) {
+    Route::post('/profil_1', function (Request $request) {
         /*$validator = Validator::make($request->all(), [
         	'Pseudo' => 'required|max:255|min:5',
 		'Password' => 'required|max:255|min:5',
@@ -52,7 +56,31 @@ Route::group(['middleware' => ['web']], function () {
         $profil->Genre = $request->Genre;
         $profil->Ville = $request->Ville;
         $profil->checkCU = $request->checkCU;
+
+	session(['profil_1' => $profil]);
+	    
+        return redirect('/');
+    });
+	
+    Route::post('/profil_2', function (Request $request) {
+        /*$validator = Validator::make($request->all(), [
+        	'Pseudo' => 'required|max:255|min:5',
+		'Password' => 'required|max:255|min:5',
+		'Genre' => 'required',
+		'checkCU' => 'boolean|different:0|different:false',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/')
+                ->withInput()
+                ->withErrors($validator);
+        }*/
+
+        $profil = session('profil_1');
+        $profil->Photo = $request->Photo;
+        $profil->Description = $request->Description;
         $profil->save();
+	Session::forget('profil_1');
 	session(['pseudo' => $profil->Pseudo]);
 	    
         return redirect('/');
