@@ -42,15 +42,11 @@
                         </div>
                         <div class="form-group">
                             <label for="profil-Genre">Sexe</label>
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="profil-Genre" data-toggle="dropdown">Sélectionnez un genre
-                                <span class="caret"></span></button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="profil-Genre">
-                                  <li role="presentation"><a role="menuitem" tabindex="1" href="#">Homme</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="2" href="#">Femme</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="3" href="#">Un peu des deux</a></li>
-                                </ul>
-                              </div>
+                            <select name="genre" class="form-control" id="profil-Genre">
+                               <option value="0">Homme</option>
+                               <option value="1">Femme</option>
+                               <option value="2">Un peu des deux</option>
+                           </select>
                         </div>
                         <div class="form-group">
                                 <label for="profil-Ville">Ville</label>
