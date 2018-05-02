@@ -7,7 +7,7 @@
                 <div class="panel-heading">
                     TinderASI
                 </div>
-
+                <script>console.log( 'Debug Objects: Dans le task blade' );</script>
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
                     @include('common.errors')
