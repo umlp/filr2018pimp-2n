@@ -86,9 +86,9 @@ Route::group(['middleware' => ['web']], function () {
         return redirect('/');
     });
 	
-    Route::get('/resources/views/images/{filename}', function($filename){
+    Route::get('/images/{filename}', function($filename){
 	$path = resource_path() . '/views/images/' . $filename;
-
+	echo "<script>console.log('dans le get image');</script>";
 	if(!File::exists($path)) {
 		return response()->json(['message' => 'Image not found.'], 404);
 	}
