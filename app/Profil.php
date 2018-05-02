@@ -9,7 +9,7 @@ class Profil extends Model
      * @var array
      */
     protected $fillable = [
-        'Pseudo', 'Password', 'Prenom', 'Email', 'Nom', 'Genre', 'Ville', 'checkCU',
+        'Pseudo', 'Password', 'Prenom', 'Email', 'Nom', 'Genre', 'Ville', 'checkCU', 'Photo', 'Description',
     ];
     
     protected $table = 'profils';
