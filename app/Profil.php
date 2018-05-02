@@ -16,4 +16,6 @@ class Profil extends Model
     public $Genre = 0;
     public $Ville = "";
     public $checkCU = false;
+    
+    protected $table = 'profils'
 }
