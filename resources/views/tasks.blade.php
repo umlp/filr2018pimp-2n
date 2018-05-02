@@ -5,8 +5,12 @@
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span style="width:24%;height:100%"><img src="{{ asset('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="width:auto;height:100%;max-width:120px;max-height:120px"></span>
-                    <span style="width:74%;height:100%;text-align:center;"><h2 style="display:inline-block;">TinderASI</h2></span>
+                    <table>
+                    <tr>
+                        <th><img src="{{ asset('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="width:auto;height:100%;max-width:120px;max-height:120px"></tr>
+                        <th colspan="3" style="text-align:center;"><h2 style="display:inline-block;">TinderASI</h2></th>
+                    </tr>
+                    </table>
                 </div>
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
