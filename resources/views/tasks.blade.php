@@ -5,8 +5,8 @@
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div style="width:24%;height:100%"><img src="{{ asset('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="max-width:auto;max-height:100%;"></div>
-                    <div style="width:74%;height:100%">TinderASI</div>
+                    <span style="width:24%;height:100%"><img src="{{ asset('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="max-width:auto;max-height:100%;"></span>
+                    <span style="width:74%;height:100%">TinderASI</span>
                 </div>
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
