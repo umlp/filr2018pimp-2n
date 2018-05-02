@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web']], function () {
 	debug_to_console("Dans le get");
 	$profil = NULL;//Profil::query()->first();
 	debug_to_console("A la fin du get");
-	return view('task', ['profil' => $profil]); 
+	return view('tasks', ['profil' => $profil]); 
     });
 
     /**
