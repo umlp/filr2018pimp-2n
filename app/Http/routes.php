@@ -27,9 +27,7 @@ Route::group(['middleware' => ['web']], function () {
      * Show Profil Dashboard
      */
     Route::get('/', function () {
-	debug_to_console("Dans le get");
 	$profil = Profil::query()->first();
-	debug_to_console("A la fin du get");
 	return view('tasks', ['profil' => $profil]); 
     });
 
@@ -38,18 +36,18 @@ Route::group(['middleware' => ['web']], function () {
      */
     Route::post('/profil', function (Request $request) {
 	debug_to_console("Dans le post");
-        $validator = Validator::make($request->all(), [
-            'Pseudo' => 'required|max:255|min:5',
-			'Password' => 'required|max:255|min:5',
-			'Genre' => 'required',
-			'checkCU' => 'boolean|different:0|different:false',
+        /*$validator = Validator::make($request->all(), [
+        	'Pseudo' => 'required|max:255|min:5',
+		'Password' => 'required|max:255|min:5',
+		'Genre' => 'required',
+		'checkCU' => 'boolean|different:0|different:false',
         ]);
 
         if ($validator->fails()) {
             return redirect('/')
                 ->withInput()
                 ->withErrors($validator);
-        }
+        }*/
 
         $profil = new Profil;
         $profil->Pseudo = $request->Pseudo;
