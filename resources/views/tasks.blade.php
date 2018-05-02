@@ -7,11 +7,11 @@
                 <div class="panel-heading">
                     TinderASI
                 </div>
-                @if (!isset($profil_1) && !isset($profil))
-                    <div class="panel-body">
-                        <!-- Display Validation Errors -->
-                        @include('common.errors')
+                <div class="panel-body">
+                    <!-- Display Validation Errors -->
+                    @include('common.errors')
 
+                    @if (!isset($profil_1) && !isset($profil))
                         <!-- New Task Form -->
                         <form action="{{ url('profil_1')}}" method="POST" class="form-horizontal">
                             {{ csrf_field() }}
@@ -58,53 +58,48 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Suivant</button>
                         </form>
-                    </div>
-                </div>
-            @endif
-            <!-- Seconde Partie Inscription -->
-            @if (isset($profil_1))
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Finaliser l'inccription
-                    </div>
-                    
-                    <form action="{{ url('profil_2')}}" method="POST" class="form-horizontal">
-                        {{ csrf_field() }}
+                    @endif
+                    <!-- Seconde Partie Inscription -->
+                    @if (isset($profil_1))
+                        <form action="{{ url('profil_2')}}" method="POST" class="form-horizontal">
+                            {{ csrf_field() }}
 
-                        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label class="custom-file">
-                                    <input type="file" id="file" class="custom-file-input" onchange="readURL(this);">
-                                    <span class="custom-file-control"></span>
-                                    <img id="imgPhoto" src="#" alt="Photo de profil" />
-                                </label>
+                            <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="custom-file">
+                                        <input type="file" id="file" class="custom-file-input" onchange="readURL(this);">
+                                        <span class="custom-file-control"></span>
+                                        <img id="imgPhoto" src="#" alt="Photo de profil" />
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <input type="hidden" name="Photo" id="Photo" value="">
-                        <div class="form-group">
-                            <label for="profil-Description">Description :</label>
-                            <textarea name ="Description" class="form-control" rows="8" id="profil-Description"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Suivant</button>
+                            <input type="hidden" name="Photo" id="Photo" value="">
+                            <div class="form-group">
+                                <label for="profil-Description">Description :</label>
+                                <textarea name ="Description" class="form-control" rows="8" id="profil-Description"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Suivant</button>
+                        </form>
+                        <script>
+                            function readURL(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        $('#imgPhoto')
+                                            .attr('src', e.target.result)
+                                            .width(150)
+                                            .height(200);
+                                        $('#Photo')
+                                            .attr('value', Uint8Array(e.target.result));
+                                    };
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+                        </script>
+                    @endif
                 </div>
-                <script>
-                    function readURL(input) {
-                        if (input.files && input.files[0]) {
-                            var reader = new FileReader();
-                            reader.onload = function (e) {
-                                $('#imgPhoto')
-                                    .attr('src', e.target.result)
-                                    .width(150)
-                                    .height(200);
-                                $('#Photo')
-                                    .attr('value', Uint8Array(e.target.result));
-                            };
-                            reader.readAsDataURL(input.files[0]);
-                        }
-                    }
-                </script>
-            @endif
+            </div>
         </div>
     </div>
 @endsection
