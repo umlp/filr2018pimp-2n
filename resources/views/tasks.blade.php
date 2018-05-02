@@ -5,10 +5,10 @@
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <table>
+                    <table style:"width:99%;>
                     <tr>
                         <td><img src="{{ asset('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="width:auto;height:100%;max-width:120px;max-height:120px"></td>
-                        <td align="center"><h2 style:"width:100%;>TinderASI<h2></td>
+                        <td align="center"><h2>TinderASI<h2></td>
                     </tr>
                     </table>
                 </div>
