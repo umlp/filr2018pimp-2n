@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateProfilTable extends Migration {
+
+    /**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('profils', function(Blueprint $table) {
+			$table->increments('id');
+			$table->timestamps();
+			$table->string('Pseudo', 100)->unique();
+      $table->string('Password', 100);
+      $table->string('Email', 100);
+      $table->string('Prenom', 100);
+      $table->string('Nom', 100);
+      $table->tinyInteger('Genre');
+      $table->string('Ville', 100);
+      $table->boolean('checkCU');
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('profil');
+	}
+
+}
