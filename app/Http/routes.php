@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
 	$profil = NULL;
 	if(isset($PSEUDO_PROFIL_ENREGISTRE))
-		$profil = Profil::query()->firstByAttributes('Pseudo' = $PSEUDO_PROFIL_ENREGISTRE);
+		$profil = Profil::query()->firstByAttributes(['Pseudo' => $PSEUDO_PROFIL_ENREGISTRE]);
 	return view('tasks', ['profil' => $profil]); 
     });
 
