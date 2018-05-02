@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
 	$profil = session('pseudo');
 	if(isset($profil)) 
-		$profil = Profil::firstByAttributes(['Pseudo' => session('pseudo')]);
+		$profil = DB::table('profils')->where('Pseudo', session('pseudo'))->first();
 	return view('tasks', ['profil' => $profil]); 
     });
 
