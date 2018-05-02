@@ -8,7 +8,12 @@ class Profil extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'Pseudo', 'Password', 'Prenom', 'Email', 'Nom', 'Genre', 'Ville', 'checkCU',
-    ];
+    public $Pseudo = "";
+    public $Password = "";
+    public $Email = "";
+    public $Prenom = "";
+    public $Nom = "";
+    public $Genre = 0;
+    public $Ville = "";
+    public $checkCU = false;
 }
