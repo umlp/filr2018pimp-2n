@@ -8,9 +8,7 @@
                     <table>
                     <tr>
                         <td><img src="{{ asset('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="width:auto;height:100%;max-width:120px;max-height:120px"></td>
-                        <td style:"width:25%;"></td>
-                        <td><h2>TinderASI<h2></td>
-                        <td style:"width:25%;"></td>
+                        <td align="center"><h2 style:"width:100%;>TinderASI<h2></td>
                     </tr>
                     </table>
                 </div>
