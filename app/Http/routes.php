@@ -54,7 +54,7 @@ Route::group(['middleware' => ['web']], function () {
         $profil->checkCU = $request->checkCU;
         $profil->save();
 	
-	global $PSEUDO_PROFIL_ENREGISTRE = $profil->Pseudo;
+	//global $PSEUDO_PROFIL_ENREGISTRE = $profil->Pseudo;
 	    
         return redirect('/');
     });
