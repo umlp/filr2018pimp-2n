@@ -28,9 +28,11 @@ Route::group(['middleware' => ['web']], function () {
      */
     Route::get('/', function () {
 	debug_to_console("Dans le get");
-        return view('profil', [
+        $view = view('profil', [
             'profil' => Profil::take(1)->orderBy('created_at','desc')
         ]);
+	debug_to_console("A la fin du get");
+	return $view; 
     });
 
     /**
