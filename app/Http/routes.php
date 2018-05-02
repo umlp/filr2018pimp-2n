@@ -28,7 +28,7 @@ Route::group(['middleware' => ['web']], function () {
      */
     Route::get('/', function () {
 	debug_to_console("Dans le get");
-	$profil = Profil::firstByAttributes();
+	$profil = Profil::query()->first();
 	if($profil != NULL)
 		$profil = $profil->get();
 	debug_to_console("A la fin du get");
