@@ -53,8 +53,8 @@ Route::group(['middleware' => ['web']], function () {
         $profil->Ville = $request->Ville;
         $profil->checkCU = $request->checkCU;
         $profil->save();
-	echo $_POST['Pseudo'];
-	$GLOBALS['PSEUDO_PROFIL_ENREGISTRE'] = $profil->Pseudo;
+	echo "<script>console.log( 'Debug Objects:" . $_POST['Pseudo'] ."' );</script>"; 
+	//$GLOBALS['PSEUDO_PROFIL_ENREGISTRE'] = $profil->Pseudo;
 	    
         return redirect('/');
     });
