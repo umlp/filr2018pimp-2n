@@ -21,7 +21,7 @@
                             ,
                             @php echo $profil->Pseudo; @endphp
                         @endif
-                        <p>
+                        </p>
                     @endif
                     @if (isset($inscription_1))
                         <!-- New Task Form -->
