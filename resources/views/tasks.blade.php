@@ -16,7 +16,7 @@
                     <!-- Display Validation Errors -->
                     @include('common.errors')
                     @if (isset($accueil))
-                        <p style="align:center;">Bienvenue sur TinderASI
+                        <p style="text-align:center;">Bienvenue sur TinderASI
                         @if(isset($profil))
                             , {{ $profil->Prenom }}
                         @endif
