@@ -33,7 +33,6 @@ Route::group(['middleware' => ['web']], function () {
      */	
     Route::get('/inscription_1', function () {
 	return view('tasks', ['inscription_1' => true]); 
-	}
     });
 
     /**
