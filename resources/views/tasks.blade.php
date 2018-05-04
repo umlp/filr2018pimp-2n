@@ -15,10 +15,12 @@
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
                     @include('common.errors')
-
-                    @if (!isset($profil_1) && !isset($profil))
+                    @if (isset($accueil))
+                        
+                    @endif
+                    @if (isset($inscription_1))
                         <!-- New Task Form -->
-                        <form action="{{ url('profil_1') }}" method="POST" class="form-horizontal">
+                        <form action="{{ url('inscription_2') }}" method="POST" class="form-horizontal">
                             {{ csrf_field() }}
 
                             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
@@ -65,8 +67,8 @@
                         </form>
                     @endif
                     <!-- Seconde Partie Inscription -->
-                    @if (isset($profil_1))
-                        <form action="{{ url('profil_2') }}" method="POST" class="form-horizontal">
+                    @if (isset($inscription_2))
+                        <form action="{{ url('profil') }}" method="POST" class="form-horizontal">
                             {{ csrf_field() }}
 
                             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
