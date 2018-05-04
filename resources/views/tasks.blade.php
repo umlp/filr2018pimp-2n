@@ -12,7 +12,7 @@
                     </tr>
                     </table>
                 </div>
-                <div class="panel-body" style="margin:5px;">
+                <div class="panel-body" style="margin:2%;">
                     <!-- Display Validation Errors -->
                     @include('common.errors')
                     @if (isset($accueil))
