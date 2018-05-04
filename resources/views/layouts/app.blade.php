@@ -28,7 +28,9 @@
             position:fixed;
             bottom:0;
             left:0;
-            width:100%
+            width:100%;
+            background:black;
+            font-color:white;
         }
 
         .fa-btn {
