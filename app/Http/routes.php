@@ -28,6 +28,25 @@ Route::group(['middleware' => ['web']], function () {
 		return view('tasks', ['accueil' => true]); 
 	}
     });
+
+    /**
+     * Connection
+     */	
+    Route::get('/identification', function () {
+	return view('tasks', ['identification' => true]); 
+    });
+    /**
+     * Connection
+     */	
+    Route::get('/authentification', function (Request $request) {
+	$profil = DB::table('profils')->where('Pseudo', $request->Pseudo, 'Password', $request->Password)->first();
+	if($isset($profil)) {
+		session(['pseudo' => $profil->Pseudo]);
+		return redirect('/');
+	} else {
+		 return redirect('/identification');
+	}
+    });
     /**
      * Create New Profil
      */	
