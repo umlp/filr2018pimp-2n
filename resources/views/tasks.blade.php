@@ -19,9 +19,28 @@
                         <p>Bienvenue sur TinderASI
                         @if(isset($profil))
                             ,
-                            @php echo $profil->Pseudo; @endphp
+                            @php
+                                echo $profil->Pseudo;
+                            @endphp
                         @endif
                         </p>
+                    @endif
+                    @if (isset($identification))
+                        <form action="{{ url('authentification') }}" method="POST" class="form-horizontal">
+                            {{ csrf_field() }}
+
+                            <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+
+                            <div class="form-group">
+                                <label for="login-Pseudo">Pseudo</label>
+                                <input type="text" name="Pseudo" class="form-control" id="login-Pseudo" placeholder="Entrez votre pseudonyme">
+                            </div>
+                            <div class="form-group">
+                                <label for="login-Password">Mot de passe</label>
+                                <input type="password" name="Password" class="form-control" id="login-Password" placeholder="Entrez votre mot de passe">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Se connecter</button>
+                        </form>
                     @endif
                     @if (isset($inscription_1))
                         <!-- New Task Form -->
