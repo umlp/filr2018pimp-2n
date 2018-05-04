@@ -25,7 +25,7 @@ Route::group(['middleware' => ['web']], function () {
 		$profil = DB::table('profils')->where('Pseudo', $pseudo)->first();
 		return view('tasks', ['accueil' => true, 'profil' => $profil]); 
 	} else {
-		return view('tasks'); 
+		return view('tasks', ['accueil' => true]); 
 	}
     });
     /**
