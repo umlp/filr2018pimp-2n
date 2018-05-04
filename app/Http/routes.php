@@ -40,7 +40,7 @@ Route::group(['middleware' => ['web']], function () {
      */	
     Route::post('/authentification', function (Request $request) {
 	$profil = DB::table('profils')->where('Pseudo', $request->Pseudo)->where('Password', $request->Password)->first();
-	if($isset($profil)) {
+	if(isset($profil)) {
 		session(['pseudo' => $profil->Pseudo]);
 		return redirect('/');
 	} else {
