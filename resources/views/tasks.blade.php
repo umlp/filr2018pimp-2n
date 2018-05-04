@@ -8,7 +8,7 @@
                     <table style:"width:99%;">
                     <tr>
                         <td><img src="{{ asset('images/LogoTinderASI.png') }}" alt="Logo TinderASI" style="width:auto;height:100%;max-width:120px;max-height:120px"></td>
-                        <td align="center"><h2>TinderASI<h2></td>
+                        <td text-align="center"><h2>TinderASI<h2></td>
                     </tr>
                     </table>
                 </div>
