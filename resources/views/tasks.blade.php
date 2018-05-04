@@ -16,7 +16,12 @@
                     <!-- Display Validation Errors -->
                     @include('common.errors')
                     @if (isset($accueil))
-                        
+                        <p>Bienvenue sur TinderASI
+                        @if(isset($profil))
+                            ,
+                            @php echo $profil->Pseudo; @endphp
+                        @endif
+                        <p>
                     @endif
                     @if (isset($inscription_1))
                         <!-- New Task Form -->
