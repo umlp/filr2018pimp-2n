@@ -23,17 +23,23 @@ Route::group(['middleware' => ['web']], function () {
 	$pseudo = session('pseudo');
 	if(isset($pseudo)) {
 		$profil = DB::table('profils')->where('Pseudo', $pseudo)->first();
-		return view('tasks', ['profil' => $profil]); 
+		return view('tasks', ['accueil' => true, 'profil' => $profil]); 
 	} else {
-		$profil = session('profil_1');
-		return view('tasks', ['profil_1' => $profil]); 
+		return view('tasks'); 
+	}
+    });
+    /**
+     * Create New Profil
+     */	
+    Route::get('/inscription_1', function () {
+	return view('tasks', ['inscription_1' => true]); 
 	}
     });
 
     /**
-     * Add New Profil
+     * Add New Profil 1st part
      */
-    Route::post('/profil_1', function (Request $request) {
+    Route::post('/inscription_2', function (Request $request) {
         /*$validator = Validator::make($request->all(), [
         	'Pseudo' => 'required|max:255|min:5',
 		'Password' => 'required|max:255|min:5',
@@ -59,10 +65,13 @@ Route::group(['middleware' => ['web']], function () {
 
 	session(['profil_1' => $profil]);
 	    
-        return redirect('/');
+        return view('tasks', ['inscription_2' => true]);
     });
-	
-    Route::post('/profil_2', function (Request $request) {
+    
+    /**
+     * Add New Profil 2nd part
+     */
+    Route::post('/profil', function (Request $request) {
         /*$validator = Validator::make($request->all(), [
         	'Pseudo' => 'required|max:255|min:5',
 		'Password' => 'required|max:255|min:5',
