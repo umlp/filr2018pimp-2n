@@ -38,7 +38,7 @@ Route::group(['middleware' => ['web']], function () {
     /**
      * Connection
      */	
-    Route::get('/authentification', function (Request $request) {
+    Route::post('/authentification', function (Request $request) {
 	$profil = DB::table('profils')->where('Pseudo', $request->Pseudo, 'Password', $request->Password)->first();
 	if($isset($profil)) {
 		session(['pseudo' => $profil->Pseudo]);
