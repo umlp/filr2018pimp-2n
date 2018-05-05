@@ -99,7 +99,7 @@
                                         <label for="file">Photo de profil</label>
                                         <input type="file" id="file" class="custom-file-input" onchange="readURL(this);">
                                         <span class="custom-file-control"></span>
-                                        <img id="imgPhoto" src="#" alt="Photo de profil" />
+                                        <img id="imgPhoto" src="#"/>
                                     </label>
                                 </div>
                             </div>
