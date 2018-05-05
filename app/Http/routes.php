@@ -62,7 +62,7 @@ Route::group(['middleware' => ['web']], function () {
         	'Pseudo' => 'required|max:255|min:5',
 		'Password' => 'required|max:255|min:5',
 		'Genre' => 'required',
-		'checkCU' => 'boolean|different:0|different:false'
+		'checkCU' => 'accepted'
         ]);
 
         if ($validator->fails()) {
