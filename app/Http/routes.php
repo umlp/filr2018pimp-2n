@@ -58,18 +58,18 @@ Route::group(['middleware' => ['web']], function () {
      * Add New Profil 1st part
      */
     Route::post('/inscription_2', function (Request $request) {
-        /*$validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
         	'Pseudo' => 'required|max:255|min:5',
 		'Password' => 'required|max:255|min:5',
 		'Genre' => 'required',
-		'checkCU' => 'boolean|different:0|different:false',
+		'checkCU' => 'boolean|different:0|different:false'
         ]);
 
         if ($validator->fails()) {
             return redirect('/')
                 ->withInput()
                 ->withErrors($validator);
-        }*/
+        }
 
         $profil = new Profil;
         $profil->Pseudo = $request->Pseudo;
