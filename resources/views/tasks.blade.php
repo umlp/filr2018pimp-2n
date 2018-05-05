@@ -96,6 +96,7 @@
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label class="custom-file">
+                                        <label for="file">Photo de profil</label>
                                         <input type="file" id="file" class="custom-file-input" onchange="readURL(this);">
                                         <span class="custom-file-control"></span>
                                         <img id="imgPhoto" src="#" alt="Photo de profil" />
