@@ -18,7 +18,7 @@
                     @if (isset($accueil))
                         <p style="text-align:center;">Bienvenue sur TinderASI
                         @if(isset($profil))
-                            , {{ $profil->Prenom }}
+                            , {{ $profil->Prenom }} {{ $profil->Nom }}
                         @endif
                         </p>
                     @endif
